@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, Outlet } from "react-router-dom";
 
 const AppNav = () => {
+	console.log("pozdrav iz appnav.jsx");
 	return (
 		<>
 			<Navbar expand="lg" className="bg-body-tertiary">

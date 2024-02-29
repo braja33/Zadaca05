@@ -1,16 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import AppNav from "./components/AppNav";
 import Home from "./pages/Home";
-
-import Nav from "./components/Nav";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./pages/AboutUs";
 
 const App = () => {
+	console.log("pozdrav iz app.jsx");
 	return (
 		<Routes>
-			<Route path="/" element={<Nav />}>
+			<Route path="/" element={<AppNav />}>
 				<Route index element={<Home />} />
-				<Route element={<AboutUs />} />
+				<Route path="/aboutus" element={<AboutUs />} />
 			</Route>
 		</Routes>
 	);
