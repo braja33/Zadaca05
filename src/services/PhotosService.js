@@ -1,4 +1,4 @@
-import { getData } from "../data/repo/Photo";
+import { getData, getSingleData } from "../data/repo/Photo";
 
 export const getPhotos = async () => {
 	const photos = [];
@@ -18,4 +18,9 @@ export const getPhotos = async () => {
 	console.log("Odgovor iz servisa", photos);
 
 	return photos;
+};
+
+export const getPhotoById = async (id) => {
+	const result = await getSingleData(id);
+	return result;
 };
