@@ -18,7 +18,7 @@ const Home = () => {
 				// Introduce a 1-second delay using setTimeout
 				setTimeout(() => {
 					setIsLoaded(true);
-				}, 1000);
+				}, 300);
 			});
 
 		console.log("Odgovor iz homa", photos);

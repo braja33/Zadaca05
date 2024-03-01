@@ -15,8 +15,6 @@ export const getPhotos = async () => {
 		});
 	});
 
-	console.log("Odgovor iz servisa", photos);
-
 	return photos;
 };
 
