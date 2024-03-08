@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import React, { useContext, useEffect, useState } from "react";
 import { getPhotos } from "../services/PhotosService";
 import Gallery from "../components/Gallery";
-const Home = () => {
-	const [photos, setProduct] = useState({});
-	const [isLoaded, setIsLoaded] = useState(false);
+import { AppContext } from "../App";
 
-	useEffect(() => {
+const Home = () => {
+	/* const [photos, setProduct] = useState({}); */
+	const { photos, setPhotos } = useContext(AppContext);
+	const { isLoaded, setIsLoaded } = useContext(AppContext);
+
+	/* useEffect(() => {
 		getPhotos()
 			.then((result) => {
 				console.log("Odgovor iz effekta", result);
@@ -22,15 +24,11 @@ const Home = () => {
 			});
 
 		console.log("Odgovor iz homa", photos);
-	}, []);
+	}, []); */
 
 	console.log("Odgovor iz homa2", photos);
 	return (
 		<>
-			<div>Početna stranica</div>
-			{/* <Button variant="primary" onClick={handleClick}>
-				Dohvati podatke
-			</Button> */}
 			<div className="container">
 				<div className="row">
 					<Gallery isLoaded={isLoaded} photos={photos} />
