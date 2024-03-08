@@ -5,13 +5,14 @@ export const getPhotos = async () => {
 
 	const result = await getData();
 
-	result.forEach((element) => {
+	result.forEach((element, index) => {
 		photos.push({
 			id: element.id,
 			created_at: element.created_at,
 			alt_description: element.alt_description,
 			url_full: element.urls.full,
-			thumb: element.urls.thumb,
+			thumb: element.urls.small,
+			number: index,
 		});
 	});
 
@@ -28,13 +29,14 @@ export const getSearchedPhotos = async (query) => {
 
 	const result = await getSearchedData(query);
 	console.log("Odgovor iz servisa raspakirani repo", result);
-	result.forEach((element) => {
+	result.results.forEach((element, index) => {
 		photos.push({
 			id: element.id,
 			created_at: element.created_at,
 			alt_description: element.alt_description,
 			url_full: element.urls.full,
-			thumb: element.urls.thumb,
+			thumb: element.urls.small,
+			number: index,
 		});
 	});
 

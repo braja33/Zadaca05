@@ -9,7 +9,7 @@ const Gallery = ({ photos }) => {
 	return (
 		<div className="row">
 			{photos.map((photo) => (
-				<div className="col-4" key={photo.id}>
+				<div className="col-4 my-3" key={photo.id}>
 					<Link to={photo.id} className="d-block mb-4 h-100">
 						<PhotoCard photo={photo} />
 					</Link>

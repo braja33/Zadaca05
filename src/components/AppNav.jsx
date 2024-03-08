@@ -22,7 +22,7 @@ const AppNav = () => {
 				setPhotos(result);
 			})
 
-			.catch((error) => console.error("Error"))
+			.catch((error) => console.error("Error fetcha: ", error))
 			.finally(() => {
 				setTimeout(() => {
 					setIsLoaded(true);
