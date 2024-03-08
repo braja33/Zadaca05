@@ -12,15 +12,28 @@ const PhotoCard = ({ photo }) => {
 			<div className="d-flex justify-content-center align-items-center">
 				<img
 					src={photo.thumb}
-					className="card-img-top img-fluid" // Added "img-fluid" for responsiveness
+					className="card-img-top img-fluid"
 					alt={photo.alt_description}
 					style={{
 						maxHeight: "100%",
 						maxWidth: "100%",
 						width: "auto",
 						height: "auto",
-					}} // Ensure responsiveness
+					}}
 				/>
+			</div>
+			<div className="card-body d-flex flex-column">
+				<div className="d-flex justify-content-between">
+					<p className="card-text">Sviđa mi se: {photo.likes}</p>
+					<button
+						className={`btn btn-${
+							photo.liked_by_user ? "success" : "outline-success"
+						}`}
+						type="button"
+					>
+						Sviđa mi se
+					</button>
+				</div>
 			</div>
 		</div>
 	);

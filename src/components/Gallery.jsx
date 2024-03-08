@@ -7,14 +7,20 @@ const Gallery = ({ photos }) => {
 	console.log("Response in Gallery", photos);
 
 	return (
-		<div className="row">
-			{photos.map((photo) => (
-				<div className="col-4 my-3" key={photo.id}>
-					<Link to={photo.id} className="d-block mb-4 h-100">
-						<PhotoCard photo={photo} />
-					</Link>
+		<div className="text-center my-5">
+			{photos.length === 0 ? (
+				<p>Fotografije nisu pronađene</p>
+			) : (
+				<div className="row">
+					{photos.map((photo) => (
+						<div className="col-3 my-3" key={photo.id}>
+							<Link to={photo.id} className="d-block mb-4 h-100">
+								<PhotoCard photo={photo} />
+							</Link>
+						</div>
+					))}
 				</div>
-			))}
+			)}
 		</div>
 	);
 };

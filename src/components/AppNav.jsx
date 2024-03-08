@@ -56,14 +56,14 @@ const AppNav = () => {
 						<Form className="d-flex" onSubmit={handleSubmit}>
 							<Form.Control
 								type="search"
-								placeholder="Search"
+								placeholder="Unesi pojam..."
 								className="me-2"
 								aria-label="Search"
 								onChange={(e) => setQuery(e.target.value)}
 								value={query}
 							/>
 							<Button type="submit" variant="outline-success">
-								Search
+								Traži
 							</Button>
 						</Form>
 					</Navbar.Collapse>

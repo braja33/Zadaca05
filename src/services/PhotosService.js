@@ -13,6 +13,8 @@ export const getPhotos = async () => {
 			url_full: element.urls.full,
 			thumb: element.urls.small,
 			number: index,
+			likes: element.likes,
+			liked_by_user: element.liked_by_user,
 		});
 	});
 
@@ -37,6 +39,8 @@ export const getSearchedPhotos = async (query) => {
 			url_full: element.urls.full,
 			thumb: element.urls.small,
 			number: index,
+			likes: element.likes,
+			liked_by_user: element.liked_by_user,
 		});
 	});
 
