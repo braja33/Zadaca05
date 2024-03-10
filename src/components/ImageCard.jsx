@@ -1,6 +1,6 @@
 import React from "react";
 
-const PhotoCard = ({ photo }) => {
+const ImageCard = ({ photo }) => {
 	return (
 		<div className="card" style={{ height: "100%" }}>
 			<div
@@ -25,18 +25,10 @@ const PhotoCard = ({ photo }) => {
 			<div className="card-body d-flex flex-column">
 				<div className="d-flex justify-content-between">
 					<p className="card-text">Sviđa mi se: {photo.likes}</p>
-					<button
-						className={`btn btn-${
-							photo.liked_by_user ? "success" : "outline-success"
-						}`}
-						type="button"
-					>
-						Sviđa mi se
-					</button>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default PhotoCard;
+export default ImageCard;

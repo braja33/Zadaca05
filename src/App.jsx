@@ -3,10 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import AppNav from "./components/AppNav";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
-import Photo from "./pages/Photo";
+import ImageViewer from "./pages/ImageViewer";
 import { getPhotos } from "./services/PhotosService";
 
-export const AppContext = createContext();
+export const GalleryContext = createContext();
 
 const App = () => {
 	console.log("pozdrav iz app.jsx");
@@ -33,17 +33,17 @@ const App = () => {
 	}, []);
 
 	return (
-		<AppContext.Provider
+		<GalleryContext.Provider
 			value={{ photos, setPhotos, isLoaded, setIsLoaded }}
 		>
 			<Routes>
 				<Route path="/" element={<AppNav />}>
 					<Route index element={<Home />} />
 					<Route path="/aboutus" element={<AboutUs />} />
-					<Route path="/:id" element={<Photo />} />
+					<Route path="/:id" element={<ImageViewer />} />
 				</Route>
 			</Routes>
-		</AppContext.Provider>
+		</GalleryContext.Provider>
 	);
 };
 

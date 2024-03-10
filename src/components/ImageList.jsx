@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "./Layout";
 import { Link } from "react-router-dom";
-import PhotoCard from "./PhotoCard";
+import ImageCard from "./ImageCard";
 
-const Gallery = ({ photos }) => {
+const ImageList = ({ photos }) => {
 	console.log("Response in Gallery", photos);
 
 	return (
@@ -15,7 +15,7 @@ const Gallery = ({ photos }) => {
 					{photos.map((photo) => (
 						<div className="col-3 my-3" key={photo.id}>
 							<Link to={photo.id} className="d-block mb-4 h-100">
-								<PhotoCard photo={photo} />
+								<ImageCard photo={photo} />
 							</Link>
 						</div>
 					))}
@@ -25,4 +25,4 @@ const Gallery = ({ photos }) => {
 	);
 };
 
-export default Layout(Gallery);
+export default Layout(ImageList);

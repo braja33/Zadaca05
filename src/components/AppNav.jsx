@@ -4,18 +4,20 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, Outlet } from "react-router-dom";
-import { AppContext } from "../App";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { GalleryContext } from "../App";
 import { getSearchedPhotos } from "../services/PhotosService";
 
 const AppNav = () => {
 	const [query, setQuery] = useState("");
-	const { photos, setPhotos } = useContext(AppContext);
-	const { isLoaded, setIsLoaded } = useContext(AppContext);
+	const { photos, setPhotos } = useContext(GalleryContext);
+	const { isLoaded, setIsLoaded } = useContext(GalleryContext);
+	const navigate = useNavigate();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setIsLoaded(false);
+		navigate("/");
 		console.log("pozdrav iz handle submita");
 		getSearchedPhotos(query)
 			.then((result) => {
@@ -62,6 +64,7 @@ const AppNav = () => {
 								onChange={(e) => setQuery(e.target.value)}
 								value={query}
 							/>
+
 							<Button type="submit" variant="outline-success">
 								Traži
 							</Button>
