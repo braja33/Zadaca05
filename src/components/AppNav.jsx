@@ -54,6 +54,9 @@ const AppNav = () => {
 							<Nav.Link as={Link} to="/">
 								Početna
 							</Nav.Link>
+							<Nav.Link as={Link} to="/login">
+								Login
+							</Nav.Link>
 						</Nav>
 						<Form className="d-flex" onSubmit={handleSubmit}>
 							<Form.Control

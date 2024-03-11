@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import Layout from "../components/Layout";
+import LoginForm from "../fragments/LoginForm";
+import { authenticate } from "../services/AuthService";
+import { API_TOKEN_KEY } from "../utils/helpers";
 
-const Login = () => {
+const Login = ({ router }) => {
+	const [isLoaded, setIsLoaded] = useState(true);
+	const [error, setError] = useState("");
+
+	const handleLogin = (accessKey, secretKey) => {
+		setError("");
+		setIsLoaded(false);
+
+		const response = authenticate(accessKey, secretKey);
+
+		response
+			.then((result) => {
+				sessionStorage.setItem(API_TOKEN_KEY, result.token);
+				router.navigate("/");
+				router.location.reload();
+			})
+			.catch((error) => setError(error))
+			.finally(() => setIsLoaded(true));
+	};
+
 	return (
 		<div className="container">
 			<div className="row">
@@ -14,4 +37,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Layout(Login);

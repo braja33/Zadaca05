@@ -7,3 +7,5 @@ export const API_URL = "https://api.unsplash.com/photos/";
 export const ACCESS_KEY_API_URL = API_URL + "?" + ACCESS_KEY;
 
 export const SEARCH_QUERY_API = "https://api.unsplash.com/search/photos?query=";
+
+export const LOGIN = "https://unsplash.com/oauth/authorize";

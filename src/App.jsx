@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import ImageViewer from "./pages/ImageViewer";
 import { getPhotos } from "./services/PhotosService";
+import Login from "./pages/Login";
 
 export const GalleryContext = createContext();
 
@@ -41,6 +42,7 @@ const App = () => {
 					<Route index element={<Home />} />
 					<Route path="/aboutus" element={<AboutUs />} />
 					<Route path="/:id" element={<ImageViewer />} />
+					<Route path="/login" element={<Login />} />
 				</Route>
 			</Routes>
 		</GalleryContext.Provider>

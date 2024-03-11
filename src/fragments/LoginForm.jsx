@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LogingForm = () => {
+const LoginForm = ({ handleLogin, isLoaded }) => {
 	const [accessKey, setAccessKey] = useState("");
 	const [secretKey, setSecretKey] = useState("");
 
@@ -8,7 +8,7 @@ const LogingForm = () => {
 		e.preventDefault();
 
 		handleLogin(accessKey, secretKey);
-		setPassword("");
+		setSecretKey("");
 	};
 
 	return (
@@ -28,7 +28,7 @@ const LogingForm = () => {
 			</div>
 			<div className="mb-3">
 				<label htmlFor="secretKey" className="form-label">
-					Password
+					Secret key
 				</label>
 				<input
 					type="text"
@@ -56,4 +56,4 @@ const LogingForm = () => {
 	);
 };
 
-export default LogingForm;
+export default LoginForm;

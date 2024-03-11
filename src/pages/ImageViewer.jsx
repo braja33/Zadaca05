@@ -29,6 +29,10 @@ const ImageViewer = ({ router }) => {
 			.finally(() => setIsLoaded(true));
 	}, []);
 
+	/* handleClick = () => {
+		return null;
+	};
+ */
 	return (
 		<div className="container text-center mt-5">
 			{!isLoaded && <Loader />}
@@ -69,6 +73,7 @@ const ImageViewer = ({ router }) => {
 										: "outline-success"
 								}`}
 								type="button"
+								/* onClick={handleClick} */
 							>
 								Sviđa mi se
 							</button>

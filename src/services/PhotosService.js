@@ -46,3 +46,5 @@ export const getSearchedPhotos = async (query) => {
 
 	return photos;
 };
+
+export const postLikeAPhoto = (id) => {};

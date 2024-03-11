@@ -22,3 +22,10 @@ export const getSearchedData = async (query) => {
 	console.log("Odgovor iz repa za tražen pojam", response);
 	return await response.json();
 };
+
+export const postData = async (id) => {
+	const response = await fetch(API_URL + id + "/like", {
+		method: "POST",
+	});
+	return await response.json();
+};
